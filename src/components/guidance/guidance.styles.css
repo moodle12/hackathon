@@ -1,0 +1,68 @@
+.guidance_position {
+  font-size: 4rem;
+  position: fixed;
+  bottom: 3%;
+  right: 3%;
+  color: #000;
+}
+
+.message {
+  width: 19rem;
+  height: 6rem;
+  background-color: #fff;
+  border-left: 8px solid green;
+  border-right: 3px solid green;
+  border-radius: 1rem;
+  position: fixed;
+  bottom: 8%;
+  right: 9%;
+  color: #000;
+}
+
+.robot_position {
+  font-size: 3rem;
+  margin-left: 0.5rem;
+}
+.bot_h4 {
+  position: relative;
+  top: -35%;
+  left: 25%;
+}
+
+.bot_p {
+  position: relative;
+  top: -30%;
+  left: 45%;
+}
+
+.guidance_cards {
+  margin-top: 0rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.guidance_p {
+  font-style: italic;
+  text-align: justify;
+  font-family: sans-serif;
+}
+
+.guidance_h5 {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+.guidance_image {
+  height: 1rem;
+  width: 1rem;
+}
+
+.card_mentor {
+  margin-top: -10rem;
+}
+
+.image_mentor {
+  height: 7rem;
+}

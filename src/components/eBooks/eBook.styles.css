@@ -1,0 +1,22 @@
+.eBook_section {
+  width: 100vw;
+  height: auto;
+  background: #fff;
+}
+
+.image-fluid {
+  width: 10rem;
+  height: 12rem;
+}
+
+.eBook_h4 {
+  margin-top: 0;
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+
+.eBook_button {
+  width: 8.5rem;
+  height: 4rem;
+  margin-left: 6rem;
+}
