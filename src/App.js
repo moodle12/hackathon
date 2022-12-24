@@ -15,6 +15,7 @@ import EBook from "./components/eBooks/eBook.component";
 import Guidance from "./components/guidance/guidance.component";
 import Result from "./components/result/result.component";
 import Marks from "./components/marks/marks.component";
+import Pdf from "./components/pdf/pdf.component";
 const App = () => {
   return (
     <>
@@ -31,6 +32,7 @@ const App = () => {
           <Route path="/guidance" element={<Guidance />} />
           <Route path="/results" element={<Result/>}/>
           <Route path="/marks" element={<Marks/>}/>
+          <Route path="/pdf" element={<Pdf/>}/>
         </Routes>
       </Router>
       {/* <SignUp /> */}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {Link, useNavigate } from "react-router-dom";
 
 const Marks = () => {
   
@@ -6,6 +7,7 @@ const Marks = () => {
 //   const[password,setPassword]= React.useState('');
 const[firstStd,setFirstStd] = useState('');
 const[secondStd,setSecondStd]= useState('');
+const navigate=useNavigate();
   const handleMarks = async (event) => {
     event.preventDefault();
    // console.warn("firstStd",firstStd);
@@ -19,10 +21,11 @@ const[secondStd,setSecondStd]= useState('');
     result=await result.json();
     alert(result.data.firstStd + "%")
     console.warn(result);
+	navigate("/pdf")
   }
   const hm2 = async (event) => {
     event.preventDefault();
-   // console.warn("firstStd",firstStd);
+   // console.warn("firstStd",firstStd); 
     let result = await fetch('http://localhost:9109/marks',{
       method:'post',
       body:JSON.stringify({secondStd}),
@@ -284,7 +287,8 @@ const[secondStd,setSecondStd]= useState('');
           <h3>Result Sheet:</h3>
         
           <label htmlFor="first"> First Standard </label>
-          <button onClick={handleMarks}>View Result: </button>
+		  <button onClick={handleMarks}>View Result: </button>
+		 
 
           <label htmlFor="enroll_password">Second Standard</label>
             <button onClick={hm2}>View Result:</button>

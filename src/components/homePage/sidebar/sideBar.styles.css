@@ -64,7 +64,7 @@
   transition: background-color 0.25s ease;
 }
 .lists .nav-link:hover {
-  background-color: #4070f4;
+  
 }
 .lists .nav-link:hover .icon {
   color: #fff;

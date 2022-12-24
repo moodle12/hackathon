@@ -1,9 +1,14 @@
 import React from "react";
 import "./login.styles.css";
+import { 
+  useNavigate
+} from 'react-router-dom';
+
 
 const LogIn = () => {
   const[email,setEmail] = React.useState('');
   const[password,setPassword]= React.useState('');
+  const navigate=useNavigate();
   const handleLogin = async (event) => {
     event.preventDefault();
     console.warn("email,password",email,password);
@@ -19,6 +24,7 @@ const LogIn = () => {
     if(result.status === 200)
     {
       alert("login done");
+      navigate('/')
     }
     else{
       alert("Invalid Credentials");
