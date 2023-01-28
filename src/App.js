@@ -16,14 +16,19 @@ import Guidance from "./components/guidance/guidance.component";
 import Result from "./components/result/result.component";
 import Marks from "./components/marks/marks.component";
 import Pdf from "./components/pdf/pdf.component";
+import DefaultLayout from "./components/admin/Dashboard/dashboard.component.";
+import Users from "./components/admin/Users/Users";
+import AddUser from "./components/admin/Users/AddUser";
 const App = () => {
+  var loc= window.location.pathname
   return (
     <>
       <Router>
-        <NavigationBar />
+      {loc === "/"? <NavigationBar/>:null } 
         <Routes>
-          <Route path="/" element={<HomePage />} />
+        <Route path="/admin/manageusers"  element={<Users/>}/>
           <Route path="/login" element={<LogIn />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/admission" element={<Admission />} />
@@ -33,8 +38,11 @@ const App = () => {
           <Route path="/results" element={<Result/>}/>
           <Route path="/marks" element={<Marks/>}/>
           <Route path="/pdf" element={<Pdf/>}/>
+          <Route path="/admin/dashboard" element={<DefaultLayout/>}/>
+          <Route path="/admin/adduser" element={<AddUser/>}/>
         </Routes>
       </Router>
+      
       {/* <SignUp /> */}
     </>
   );
