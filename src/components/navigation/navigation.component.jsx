@@ -19,6 +19,9 @@ const NavigationBar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
+              <a href="https://keen-jalebi-e541d2.netlify.app/" target="_blank" rel="noreferrer">Raise Donations</a>
+            </li>
+            <li>
               <Link to="/payment">Fee Payment</Link>
             </li>
             <li>

@@ -67,10 +67,10 @@
   
 }
 .lists .nav-link:hover .icon {
-  color: #fff;
+  color: brown
 }
 .lists .nav-link:hover .link {
-  color: #fff;
+  color:brown;
 }
 .nav-link .icon {
   margin-right: 14px;

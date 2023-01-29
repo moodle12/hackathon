@@ -19,6 +19,9 @@ import Pdf from "./components/pdf/pdf.component";
 import DefaultLayout from "./components/admin/Dashboard/dashboard.component.";
 import Users from "./components/admin/Users/Users";
 import AddUser from "./components/admin/Users/AddUser";
+import PDashboard from "./components/parent/parent_dashboard/PDashboard";
+import IDashboard from "./components/Institution/Institute_Dashboard/IDashboard";
+import TDashboard from "./components/Teacher/Teacher_Dashboard/TDashboard";
 const App = () => {
   var loc= window.location.pathname
   return (
@@ -38,8 +41,11 @@ const App = () => {
           <Route path="/results" element={<Result/>}/>
           <Route path="/marks" element={<Marks/>}/>
           <Route path="/pdf" element={<Pdf/>}/>
-          <Route path="/admin/dashboard" element={<DefaultLayout/>}/>
-          <Route path="/admin/adduser" element={<AddUser/>}/>
+          <Route path="/admin/dashboard" exact element={<DefaultLayout/>}/>
+          <Route path="/admin/adduser" exact element={<AddUser/>}/>
+          <Route path="/parent/dashboard" exact element={<PDashboard/>}></Route>
+          <Route path="/institute/dashboard" exact element={<IDashboard/>}></Route>
+          <Route path="/teacher/dashboard" exact element={<TDashboard/>}></Route>
         </Routes>
       </Router>
       

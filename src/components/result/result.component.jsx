@@ -20,7 +20,6 @@ const Result = () => {
     result=await result.json();
     console.warn(result);
     navigate("/marks");
-
   }
   return (
     <>

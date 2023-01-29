@@ -9,6 +9,11 @@ const LogIn = () => {
   const[email,setEmail] = React.useState('');
   const[password,setPassword]= React.useState('');
   const navigate=useNavigate();
+  const stu = "63b1d1332ff131c0ff65b0f9"
+  const parent="63b1d1532ff131c0ff65b0ff"
+  const admin="63d57148b3a77b47da996e75"
+  const institute="63b1d13d2ff131c0ff65b0fb"
+  const teacher="63b1d1492ff131c0ff65b0fd"
   const handleLogin = async (event) => {
     event.preventDefault();
     console.warn("email,password",email,password);
@@ -21,10 +26,34 @@ const LogIn = () => {
     });
     result=await result.json();
     console.warn(result);
+    var arr=result.data.userType
+    console.log(arr);
     if(result.status === 200)
     {
-      alert("login done");
-      navigate('/')
+      if (arr==stu) {
+        alert("login done");
+        navigate('/') 
+      }
+      else if(arr==admin)
+      {
+        alert("login done");
+        navigate('/admin/dashboard') 
+      }
+      else if(arr==parent)
+      {
+        alert("login done")
+        navigate('/parent/dashboard')
+      }
+      else if(arr==institute)
+      {
+        alert("login done")
+        navigate('/institute/dashboard')
+      }
+      else if(arr==teacher)
+      {
+        alert("login done")
+        navigate('/teacher/dashboard')
+      }
     }
     else{
       alert("Invalid Credentials");

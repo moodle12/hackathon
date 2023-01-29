@@ -5,7 +5,9 @@ import { Link } from 'react-router-dom';
 
 const Users =() => {
   const [users1,setUser]=useState([])
-  const stu = "63b1d1332ff131c0ff65b0f9"
+  const[userType,setUserType]=useState([])
+  // const stu = "63b1d1332ff131c0ff65b0f9"
+  // const parent="63b1d1492ff131c0ff65b0fd"
     const getdata = async() =>{
         let result = await fetch('http://localhost:9109/getallusers',{
             method:'get',
@@ -16,6 +18,18 @@ const Users =() => {
           const data = await result.json();
           const array=data.data
           console.log(array);
+          // for(let i=0;i<array.length;i++)
+          // {
+          //   arr=array[i].userType._id;
+          //   console.log(arr);
+          // }
+          //   if (arr===stu) {
+          //     setUserType("Student")
+          //   }
+          //   else if(arr===parent)
+          //   {
+          //     setUserType([userType],"Parent")
+          //   }
           setUser(array)
 
           
@@ -24,7 +38,21 @@ const Users =() => {
     useEffect(() => {
       getdata()
     },[])
-   
+  //  function display_usertype() {
+  //   users1.map((item, index)=>(
+  
+  //         (()=>{
+  //           if(item.userType==stu)
+  //           {
+  //             return "Student"
+  //           }
+  //           else if(item.userType==parent)
+  //           {
+  //             return "Parent"
+  //           }
+  //         })
+  //   ))
+  //  }
   return (
     <div>
       <Sidebar/>
@@ -34,7 +62,7 @@ const Users =() => {
           <td className='p-5'>FirstName</td>
           <td className='p-5'>LastName</td>
           <td className='p-5'>Email</td>  
-          <td className='p-5'>UserType</td>      
+          {/* <td className='p-5'>UserType</td>       */}
       </tr>
         {/* {
           users1.map((item,index)=>(
@@ -49,7 +77,7 @@ const Users =() => {
           <td>{item.firstName}</td>
           <td>{item.lastName}</td>
           <td>{item.email} </td>
-          <td>{item.userType===stu?"Student":null} </td>
+          {/* <td>{userType}</td> */}
           </tr>
           ))
         }

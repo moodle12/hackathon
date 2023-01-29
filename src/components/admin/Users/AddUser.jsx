@@ -66,10 +66,10 @@ const AddUser = () => {
             id="confirmPassword"
           />
 
-       <select name="" id="" onChange={(e) => setUserType(e.target.value)}>
+       <select name="UserType" id="UserType" onChange={(e) => setUserType(e.target.value)}>
        {
           options.map((item, index)=>(
-          <option value={item._id} >{item.userTypeName}</option>
+          <option key={item._id} value={item._id}>{item.userTypeName}</option>
           ))
         }
        </select>
