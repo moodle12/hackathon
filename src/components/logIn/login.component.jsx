@@ -1,7 +1,7 @@
 import React from "react";
 import "./login.styles.css";
 import { 
-  useNavigate
+  useNavigate,Link
 } from 'react-router-dom';
 
 
@@ -30,26 +30,26 @@ const LogIn = () => {
     console.log(arr);
     if(result.status === 200)
     {
-      if (arr==stu) {
+      if (arr===stu) {
         alert("login done");
-        navigate('/') 
+        navigate('/home') 
       }
-      else if(arr==admin)
+      else if(arr===admin)
       {
         alert("login done");
         navigate('/admin/dashboard') 
       }
-      else if(arr==parent)
+      else if(arr===parent)
       {
         alert("login done")
         navigate('/parent/dashboard')
       }
-      else if(arr==institute)
+      else if(arr===institute)
       {
         alert("login done")
         navigate('/institute/dashboard')
       }
-      else if(arr==teacher)
+      else if(arr===teacher)
       {
         alert("login done")
         navigate('/teacher/dashboard')
@@ -73,6 +73,7 @@ const LogIn = () => {
           <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} placeholder="Password" id="password" />
 
           <button onClick={handleLogin}>Log In</button>
+          <p>Don't have an Account? <Link to="/signup" className="hover">Create</Link></p>
           <div className="social">
             <div className="go">Google</div>
             <div className="fb">Facebook</div>

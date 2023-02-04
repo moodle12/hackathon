@@ -30,8 +30,8 @@ const App = () => {
       {loc === "/"? <NavigationBar/>:null } 
         <Routes>
         <Route path="/admin/manageusers"  element={<Users/>}/>
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<HomePage/>} />
+          <Route path="/" element={<LogIn/>} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/admission" element={<Admission />} />

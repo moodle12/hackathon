@@ -25,7 +25,7 @@ const NavigationBar = () => {
               <Link to="/payment">Fee Payment</Link>
             </li>
             <li>
-              <Link to="/login">LogIn</Link>
+              <Link to="/">LogOut</Link>
             </li>
             <li>
               <Link to="/signup">SignUp</Link>

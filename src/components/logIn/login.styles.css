@@ -97,7 +97,9 @@ input:hover {
 .loginForm .social i {
   margin: 10px 0 4px;
 }
-
+.hover:hover{
+  color: brown;
+}
 @media only screen and (max-width: 600px) {
   .logInBody {
     background: url(https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Z3JhZGllbnQlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=700&q=60);
