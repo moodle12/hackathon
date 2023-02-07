@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./navigation.styles.css";
 // import {logo} from "../../hack.png"
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
+  let loginId  = localStorage.getItem('login_id'); 
+  console.log(loginId);
   return (
     <>
       <nav className="navbar">
@@ -26,6 +28,9 @@ const NavigationBar = () => {
             </li>
             <li>
               <Link to="/">LogOut</Link>
+            </li>
+            <li>
+              <Link to={`/profile/${loginId}`}>Student Profile</Link>
             </li>
             <li>
               <Link to="/signup">SignUp</Link>

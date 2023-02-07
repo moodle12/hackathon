@@ -26,8 +26,11 @@ const LogIn = () => {
     });
     result=await result.json();
     console.warn(result);
+    var login_id=result.data._id
+    localStorage.setItem("login_id",login_id);
+    console.log(login_id);
     var arr=result.data.userType
-    console.log(arr);
+    // console.log(arr);
     if(result.status === 200)
     {
       if (arr===stu) {
