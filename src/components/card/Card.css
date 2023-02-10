@@ -1,0 +1,25 @@
+#card {
+  width: 300px;
+  min-width: 300px; /* To Prevent Element's Width From Going Below 300px */
+
+  background: #f3f3f3;
+  font-family: "Open Sans", sans-serif;
+  box-shadow: rgba(0, 0, 0, 0.176) 0px 16px 48px 0px;
+  border-radius: 7px;
+
+  resize: both; /* To Resize */
+  overflow: auto;
+}
+
+#img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 7px 7px 0 0;
+}
+
+#title {
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 5px;
+}
