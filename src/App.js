@@ -7,7 +7,7 @@ import LogIn from "./components/logIn/login.component";
 import SignUp from "./components/signUp/signUp.component";
 
 import Admission from "./components/admission/admission.component";
-import { useEffect,useState } from 'react';
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Payment from "./components/payment/payment.component";
 import Community from "./components/community/community.component";
@@ -26,53 +26,65 @@ import Profile from "./components/profile/profile.component";
 import Attendance from "./components/attendance/attendance.component";
 import ResultUpload from "./components/Teacher/Result-upload/ResultUpload";
 const App = () => {
-  var loc= window.location.pathname
-  const [users1,setUser]=useState([])
-    const getdata = async() =>{
-        let result = await fetch('http://localhost:9109/getallusers',{
-            method:'get',
-            headers:{
-              'Content-Type':'application/json'
-            }
-          });
-          const data = await result.json();
-          const array=data.data
-          console.log(array);
-          setUser(array)
-    }
-    console.log(users1);
-    useEffect(() => {
-      getdata()
-    },[])
+  var loc = window.location.pathname;
+  const [users1, setUser] = useState([]);
+  const getdata = async () => {
+    let result = await fetch("http://localhost:9109/getallusers", {
+      method: "get",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await result.json();
+    const array = data.data;
+    console.log(array);
+    setUser(array);
+  };
+  console.log(users1);
+  useEffect(() => {
+    getdata();
+  }, []);
   return (
     <>
       <Router>
-      {/* {loc === "/"? <NavigationBar/>:null }  */}
-      <NavigationBar/>
+        {/* {loc === "/"? <NavigationBar/>:null }  */}
+        <NavigationBar />
         <Routes>
-        <Route path="/admin/manageusers"  element={<Users/>}/>
-          <Route path="/home" element={<HomePage/>} />
-          <Route path="/" element={<LogIn/>} />
+          <Route path="/admin/manageusers" element={<Users />} />
+          <Route path="/" element={<HomePage />} />
+          <Route path="/loginUser" element={<LogIn />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/admission" element={<Admission />} />
-          <Route path="/attendance" element={<Attendance/>}/>
+          <Route path="/attendance" element={<Attendance />} />
           <Route path="/community" element={<Community />} />
           <Route path="/eBooks" element={<EBook />} />
           <Route path="/guidance" element={<Guidance />} />
-          <Route path="/results" element={<Result/>}/>
-          <Route path="/marks" element={<Marks/>}/>
-          <Route path="/pdf" element={<Pdf/>}/>
-          <Route path="/admin/dashboard" exact element={<DefaultLayout/>}/>
-          <Route path="/admin/adduser" exact element={<AddUser/>}/>
-          <Route path="/parent/dashboard" exact element={<PDashboard/>}></Route>
-          <Route path="/institute/dashboard" exact element={<IDashboard/>}></Route>
-          <Route path="/teacher/dashboard" exact element={<TDashboard/>}></Route>
+          <Route path="/results" element={<Result />} />
+          <Route path="/marks" element={<Marks />} />
+          <Route path="/pdf" element={<Pdf />} />
+          <Route path="/admin/dashboard" exact element={<DefaultLayout />} />
+          <Route path="/admin/adduser" exact element={<AddUser />} />
+          <Route
+            path="/parent/dashboard"
+            exact
+            element={<PDashboard />}
+          ></Route>
+          <Route
+            path="/institute/dashboard"
+            exact
+            element={<IDashboard />}
+          ></Route>
+          <Route
+            path="/teacher/dashboard"
+            exact
+            element={<TDashboard />}
+          ></Route>
           <Route path="/profile/:id" element={<Profile />}></Route>
-          <Route path="/resultUpload" element={<ResultUpload/>} />
+          <Route path="/resultUpload" element={<ResultUpload />} />
         </Routes>
       </Router>
-      
+
       {/* <SignUp /> */}
     </>
   );
