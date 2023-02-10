@@ -72,6 +72,7 @@ import axios from 'axios';
 
 const Profile = () => {
   const [users1,setUser]=useState([])
+  const[src,setSrc]=useState([])
     const {id}=useParams()
   const [profileImg, setProfileImg] = useState('');
 
@@ -99,24 +100,53 @@ useEffect(() => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('profileImg', profileImg);
+    formData.append('user',id)
     axios
       .post('http://localhost:9109/api/user-profile', formData, {})
       .then((res) => {
         console.log(res);
       });
   };
+  const getData= () => {
+    axios
+      .get('http://localhost:9109/api/')
+      .then((res) => {
+        for (let index = 0; index < res.data.users.length; index++) {
+          if(id==res.data.users[index].user._id)
+        {
+          console.log("id matched");
+          setSrc(res.data.users[index].profileImg)
+        } 
+        }
+        // console.log(res.data.users[0].user._id);
+        
+        // console.log(res.data.users);
+      });
+  };
+  useEffect(()=>{
+    getData()
+  },[])
 
   return (
     <div className="container">
      <h1>Your Profile</h1>
-     <img style={{height:"20%",width:"20%",borderRadius:"50%"}} src="http://localhost:9109/public/09a9307b-24f8-4a65-a9f7-09f46001033d-screenshot-(405).png" alt="" />
+     <img style={{height:"20%",width:"20%",borderRadius:"50%"}} src={src} alt="" />
         <h2>Name: {users1.firstName} {users1.lastName} </h2>
          <h2>Email:{users1.email} </h2>
          <h3>Phone Number:{users1.phoneNum} </h3>
-      <div className="row mt-2">
+      <div>
         <form onSubmit={onSubmit}>
           <div className="form-group">
+            <p className='text-dark' style={{fontWeight:"700"}}>Upload your profile picture</p>
             <input type="file" onChange={onFileChange} />
+          </div>
+          <div className="form-group">
+            <p className='text-dark' style={{fontWeight:"700"}}>Upload your Aadhar Card</p>
+            <input type="file" />
+          </div>
+          <div className="form-group">
+            <p className='text-dark' style={{fontWeight:"700"}}>Upload your Birth Certificate</p>
+            <input type="file" />
           </div>
           <div className="form-group">
             <button className="btn btn-primary" type="submit">

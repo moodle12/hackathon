@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Itim&display=swap");
+.resultUpload-container {
+  height: 70vh;
+  width: 99.8vw;
+  background-color: #f2f2f2;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.resultUpload-h2 {
+  padding-top: 1rem;
+  font-family: "Itim", cursive;
+  text-align: center;
+  color: darkblue;
+}
+
+.resultUpload-card {
+  height: 250px;
+  width: 400px;
+  background-color: #c3c3c3;
+  border: 2px solid #000;
+  border-radius: 1rem;
+
+  margin-top: 5rem;
+  margin-left: 18rem;
+}
+
+.resultUpload-card span {
+  font-weight: bold;
+  font-size: 1.3rem;
+  margin-left: 2rem;
+  padding-right: 20px;
+  font-family: sans-serif;
+}
+
+#assignment {
+  margin-top: 2rem;
+}
+
+.uploadResult-submit {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8.5rem;
+  margin-top: 2rem;
+  border: 2px solid #000;
+  border-radius: 1rem;
+}
+
+.uploadResult-fileUpload {
+  width: 300px;
+  margin-top: 2rem;
+  margin-left: 1rem;
+  background-color: #c3c3c3;
+  font-weight: bold;
+}
+
+.resultUpload-image {
+  height: 380px;
+  width: 400px;
+  margin-left: 6rem;
+
+  border: 2px solid #000;
+  border-radius: 1rem;
+  margin-top: 1rem;
+}

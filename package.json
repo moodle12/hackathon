@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@alan-ai/alan-sdk-web": "^1.8.42",
     "@coreui/icons": "^2.1.0",
     "@coreui/icons-react": "^2.1.0",
     "@coreui/react": "^4.5.0",

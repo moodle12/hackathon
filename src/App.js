@@ -24,6 +24,7 @@ import IDashboard from "./components/Institution/Institute_Dashboard/IDashboard"
 import TDashboard from "./components/Teacher/Teacher_Dashboard/TDashboard";
 import Profile from "./components/profile/profile.component";
 import Attendance from "./components/attendance/attendance.component";
+import ResultUpload from "./components/Teacher/Result-upload/ResultUpload";
 const App = () => {
   var loc= window.location.pathname
   const [users1,setUser]=useState([])
@@ -68,6 +69,7 @@ const App = () => {
           <Route path="/institute/dashboard" exact element={<IDashboard/>}></Route>
           <Route path="/teacher/dashboard" exact element={<TDashboard/>}></Route>
           <Route path="/profile/:id" element={<Profile />}></Route>
+          <Route path="/resultUpload" element={<ResultUpload/>} />
         </Routes>
       </Router>
       
