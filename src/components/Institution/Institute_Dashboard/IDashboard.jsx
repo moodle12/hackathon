@@ -1,8 +1,11 @@
 import React, {useEffect,useState} from 'react'
 import alanBtn from '@alan-ai/alan-sdk-web';
+import Pdf from '../../pdf/pdf.component';
+import { useNavigate } from "react-router-dom";
 const IDashboard = () => {
  const [menuItems, setMenuItems] = useState([])
  const [cart, setCart] = useState([])
+ let navigate= useNavigate()
 useEffect(() => {
   alanBtn({
     key:
@@ -20,8 +23,14 @@ const addToCart=(menuItem)=>{
     return[...oldCart,menuItem]
   })
 }
+const viewpdf=()=>{
+  
+  navigate("/pdf")
+}
  return (
    <div className="App">
+   <p>View Documents of the Student for Identity Proof</p>
+   <button onClick={viewpdf}>View</button>
    <table className='table-bordered' border="2">
    <tr>
     <th>Student's Name</th>

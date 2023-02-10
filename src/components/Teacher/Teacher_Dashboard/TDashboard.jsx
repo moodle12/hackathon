@@ -28,7 +28,7 @@ const TDashboard = () => {
            Assignment Upload
           </div>
           <div className="tDashboard-item__3">
-           <a className="text_style" rel="noreferrer" target="_blank" href="https://frolicking-macaron-a53493.netlify.app/"> Mark Attendance</a>
+           <a className="text_style" rel="noreferrer" target="_blank" href="https://stately-banoffee-e93132.netlify.app/"> Mark Attendance</a>
           </div>
         </div>
       </div>
