@@ -5,10 +5,13 @@ import App from "./App";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import Provider from "./context/Provider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
+  <Provider>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  </Provider>
 );

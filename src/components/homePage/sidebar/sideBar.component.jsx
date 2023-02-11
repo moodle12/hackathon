@@ -47,6 +47,9 @@ const SideBar = () => {
                     <span className="link">Community</span>
                   </Link>
                 </li>
+                <li>
+                  <button className="btn btn-danger"><Link to="/">LOGOUT</Link></button>
+                </li>
               </ul>
             </div>
           </div>

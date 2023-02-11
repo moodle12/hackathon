@@ -25,6 +25,10 @@ import TDashboard from "./components/Teacher/Teacher_Dashboard/TDashboard";
 import Profile from "./components/profile/profile.component";
 import Attendance from "./components/attendance/attendance.component";
 import ResultUpload from "./components/Teacher/Result-upload/ResultUpload";
+import NotFound from "./components/NotFound";
+import AddStudent from "./components/Institution/Institute_Dashboard/AddStudent";
+import StudentLogin from "./components/studentLogin/StudentLogin";
+import LeaveInstitute from "./components/Institution/LeaveInstitute";
 const App = () => {
   var loc = window.location.pathname;
   const [users1, setUser] = useState([]);
@@ -51,8 +55,8 @@ const App = () => {
         <NavigationBar />
         <Routes>
           <Route path="/admin/manageusers" element={<Users />} />
-          <Route path="/" element={<HomePage />} />
-          <Route path="/loginUser" element={<LogIn />} />
+          <Route path="/" exact element={<LogIn />} />
+          <Route path="/loginUser" element={<HomePage/>} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/payment" element={<Payment />} />
           <Route path="/admission" element={<Admission />} />
@@ -65,16 +69,20 @@ const App = () => {
           <Route path="/pdf" element={<Pdf />} />
           <Route path="/admin/dashboard" exact element={<DefaultLayout />} />
           <Route path="/admin/adduser" exact element={<AddUser />} />
+          <Route path="/notfound" exact element={<NotFound/>}></Route>
           <Route
             path="/parent/dashboard"
             exact
             element={<PDashboard />}
           ></Route>
+          <Route path="/student/login" exact element={<StudentLogin/>}></Route>
           <Route
             path="/institute/dashboard"
             exact
             element={<IDashboard />}
           ></Route>
+          <Route path="/leave/institute" exact element={<LeaveInstitute/>}></Route>
+          <Route path="/institute/addstudent" exact element={<AddStudent/>}></Route>
           <Route
             path="/teacher/dashboard"
             exact
@@ -82,6 +90,7 @@ const App = () => {
           ></Route>
           <Route path="/profile/:id" element={<Profile />}></Route>
           <Route path="/resultUpload" element={<ResultUpload />} />
+          <Route path="*" element={<NotFound/>}></Route>
         </Routes>
       </Router>
 

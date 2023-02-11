@@ -4,6 +4,7 @@ import "./navigation.styles.css";
 import { Link } from "react-router-dom";
 
 const NavigationBar = () => {
+  var loc = window.location.pathname;
   let loginId  = localStorage.getItem('login_id'); 
   console.log(loginId);
   return (
@@ -18,17 +19,17 @@ const NavigationBar = () => {
           </div>
           <ul className="menu-items">
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/loginUser">Home</Link>
             </li>
             <li>
               <a href="https://keen-jalebi-e541d2.netlify.app/" target="_blank" rel="noreferrer">Raise Donations</a>
             </li>
-            <li>
+            {/* <li>
               <Link to="/payment">Fee Payment</Link>
-            </li>
-            <li>
-              <Link to="/">LogOut</Link>
-            </li>
+            </li> */}
+            {/* <li>
+              <Link to="/logout">LogOut</Link>
+            </li> */}
             <li>
               <Link to={`/profile/${loginId}`}>Student Profile</Link>
             </li>
