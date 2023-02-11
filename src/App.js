@@ -29,6 +29,9 @@ import NotFound from "./components/NotFound";
 import AddStudent from "./components/Institution/Institute_Dashboard/AddStudent";
 import StudentLogin from "./components/studentLogin/StudentLogin";
 import LeaveInstitute from "./components/Institution/LeaveInstitute";
+import Home from "./components/HOME/Home";
+import ViewLc from "./components/Institution/Institute_Dashboard/ViewLc";
+import SubmitLc from "./components/Institution/Institute_Dashboard/SubmitLc";
 const App = () => {
   var loc = window.location.pathname;
   const [users1, setUser] = useState([]);
@@ -55,7 +58,7 @@ const App = () => {
         <NavigationBar />
         <Routes>
           <Route path="/admin/manageusers" element={<Users />} />
-          <Route path="/" exact element={<LogIn />} />
+          <Route path="/" exact element={<LogIn/>} />
           <Route path="/loginUser" element={<HomePage/>} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/payment" element={<Payment />} />
@@ -70,6 +73,8 @@ const App = () => {
           <Route path="/admin/dashboard" exact element={<DefaultLayout />} />
           <Route path="/admin/adduser" exact element={<AddUser />} />
           <Route path="/notfound" exact element={<NotFound/>}></Route>
+          <Route path="/institute/viewlc" exact element={<ViewLc/>}></Route>
+          <Route path="/student/submitlc" exact element={<SubmitLc/>}></Route>
           <Route
             path="/parent/dashboard"
             exact

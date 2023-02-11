@@ -1,11 +1,14 @@
 import React, {useState} from 'react'
 import { Document,Page } from 'react-pdf/dist/esm/entry.webpack';
-
+import { useEffect} from "react";
+import { useNavigate, useParams,Link } from "react-router-dom";
+import axios from "axios";
 
 const Pdf = () => {
     const [numPages, setNumPages] = useState(null);
     const [pageNumber, setPageNumber] = useState(1);
-  
+    const [users1, setUser] = useState([]);
+    const [src, setSrc] = useState([]);
     function onDocumentLoadSuccess({numPages}){
       setNumPages(numPages);
       setPageNumber(1);
@@ -22,24 +25,32 @@ const Pdf = () => {
     function changePageNext(){
       changePage(+1)
     }
+    const onSubmit2 = (e) => {
+      axios.get("http://localhost:9109/document/").then((res) => {
+        console.log(res.data.users);
+        var array=res.data.users[0].License
+        console.log(array);
+        setSrc(array)
+        // for (let index = 0; index < res.data.users.length; index++) {
+        //   if(id==res.data.users[index].user._id)
+        // {
+        //   console.log("id matched");
+        //   setSrc(res.data.users[index].profileImg)
+        // }
+        // }
+        // console.log(res.data.users[0].user._id);
+  
+        // console.log(res.data.users);
+      });
+    };
+    useEffect(()=>{
+      onSubmit2()
+    },[])
   return (
     <div>
-     {/* <header className="App-header">
-        <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-          <Page height="600" pageNumber={pageNumber} />
-        </Document>
-        <p> Page {pageNumber} of {numPages}</p>
-        { pageNumber > 1 && 
-        <button onClick={changePageBack}>Previous Page</button>
-        }
-        {
-          pageNumber < numPages &&
-          <button onClick={changePageNext}>Next Page</button>
-        }
-      </header> */}
       <center>
         <div>
-          <Document file="/sample.pdf" onLoadSuccess={onDocumentLoadSuccess}>
+          <Document file={src} onLoadSuccess={onDocumentLoadSuccess}>
             {Array.from(
               new Array(numPages),
               (el,index) => (

@@ -28,6 +28,9 @@ const addToCart=(menuItem)=>{
 const addAdmission=()=>{
   navigate("/institute/addstudent")
 }
+const viewLc=()=>{
+  navigate("/institute/viewlc")
+}
 // const viewpdf=()=>{
 //   navigate("/pdf")
 // }
@@ -53,14 +56,13 @@ const getdata = async() =>{
     <h1>GLS University's Dashboard</h1>
     <div className="row">
       <div className="col-md-4 col-sm-12">
-            <div class="card" style={{display:"none"}}>
+            <div class="card" >
           <div class="i_icon">
             <img src="http://localhost:9109/public/2852cceb-8b93-4a9a-ad1c-2d579ee05b73-home-gallery-4-1200x800-original.jpg" alt="" />
           </div>
           <h1 className='search'>Search</h1>
-          <p>Search a Student based on their respective Student Unique ID.</p>
-          <input type="text"/>
-          <button class="btn" type='submit' onClick={getdata}>Search</button>
+          <p>See the list of Pending Leaving Applications.</p>
+          <button class="btn" type='submit' onClick={viewLc}>View</button>
         </div>
       </div>
           <div className="col-md-4 col-sm-12">

@@ -31,7 +31,7 @@ const NavigationBar = () => {
               <Link to="/logout">LogOut</Link>
             </li> */}
             <li>
-              <Link to={`/profile/${loginId}`}>Student Profile</Link>
+              <Link to={`/profile/${loginId}`}>Profile</Link>
             </li>
             <li>
               <Link to="/signup">SignUp</Link>

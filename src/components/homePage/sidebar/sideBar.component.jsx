@@ -1,8 +1,13 @@
 import React from "react";
 import "./sideBar.styles.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SideBar = () => {
+  let naviagte = useNavigate()
+  const handleLogout = () => {
+    localStorage.setItem('token', '');
+    naviagte('/')
+  }
   return (
     <>
       <section className="homePageSection">
@@ -48,7 +53,7 @@ const SideBar = () => {
                   </Link>
                 </li>
                 <li>
-                  <button className="btn btn-danger"><Link to="/">LOGOUT</Link></button>
+                  <button className="btn btn-danger" onClick={handleLogout}>LOGOUT</button>
                 </li>
               </ul>
             </div>
