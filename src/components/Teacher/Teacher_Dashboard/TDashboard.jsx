@@ -35,7 +35,7 @@ const TDashboard = () => {
       </div>
       <div className="tDashboard-main">
         <div className="tDashboard-main__left">
-          <h2 className="schedule__title">22/12/2023 Schedule</h2>
+          <h2 className="schedule__title">11/02/2023 Schedule</h2>
           <div className="cards">
             <Card
               title="Physics-STD-9"
